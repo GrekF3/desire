@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+{% extends 'base-page.html' %}
+{% load static %}
+<html lang="en">
+
+<body>
+
+  <div class="wrapper">
+    
+    {% block content %}
+    <main class="main">
+      <div class="breadcrumbs">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{% url 'home' %}">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{% url 'about' %}">О нас</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="about">
+        <div class="about__prev">
+          <div class="container">
+            <h2 class="about__prev-title">
+              О нас
+            </h2>
+          </div>
+        </div>
+        <div class="about__content">
+          <div class="container">
+            <h3 class="about__title">Баланс в простоте благодаря осознанному сочетанию дизайна, функциональности и мастерства</h3>
+            <div class="about__text">
+              <p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.</p>
+              <p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about__popup">
+          <a class="about__popup-play" data-fancybox href="">
+            <img class="about__popup-imgbtn" src="{% static 'images/play-button.svg' %}" alt="play button">
+          </a>
+        </div>
+      </section>
+      <section class="inspiration">
+        <div class="container-fluid">
+          <div class="inspiration__inner">
+            <img class="inspiration__images" src="{% static 'images/inspiration-chair.png' %}" alt="">
+            <div class="inspiration__content">
+              <h3 class="inspiration__title">
+                Наше вдохновение в деталях
+              </h3>
+              <p class="inspiration__text">
+                Идейные соображения высшего порядка, а также реализация намеченных плановых заданий позволяет оценить значение позиций, занимаемых участниками в отношении поставленных задач.
+              </p>
+              <ul class="inspiration__list">
+                <li class="inspiration__item">
+                  <div class="inspiration__item-content">
+                    <p class="inspiration__item-text">Дизайн и технические чертежи</p>
+                    <p class="inspiration__num">80%</p>
+                  </div>
+                  <div class="inspiration__line" style="width: 80%;"></div>
+                </li>
+                <li class="inspiration__item">
+                  <div class="inspiration__item-content">
+                    <p class="inspiration__item-text">Измерения</p>
+                    <p class="inspiration__num">40%</p>
+                  </div>
+                  <div class="inspiration__line" style="width: 70%;"></div>
+                </li>
+                <li class="inspiration__item">
+                  <div class="inspiration__item-content">
+                    <p class="inspiration__item-text">Анализ функциональности мебели</p>
+                    <p class="inspiration__num">75%</p>
+                  </div>
+                  <div class="inspiration__line" style="width: 75%;"></div>
+                </li>
+                <li class="inspiration__item">
+                  <div class="inspiration__item-content">
+                    <p class="inspiration__item-text">Визуализация интерьера</p>
+                    <p class="inspiration__num">70%</p>
+                  </div>
+                  <div class="inspiration__line" style="width: 40%;"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="partners">
+        <div class="container-fluid">
+          <div class="partners__items">
+            <img class="partners__item" src="{% static 'images/partners/part-1.svg' %}" alt="">
+            <img class="partners__item" src="{% static 'images/partners/part-2.svg' %}" alt="">
+            <img class="partners__item" src="{% static 'images/partners/part-1.svg' %}" alt="">
+            <img class="partners__item" src="{% static 'images/partners/part-2.svg' %}" alt="">
+            <img class="partners__item" src="{% static 'images/partners/part-1.svg' %}" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="collection">
+        <a class="collection__item" href="#">
+          <img class="collection__images" src="{% static 'images/content/collection-1.jpg' %}" alt="">
+          <div class="collection__info">
+            <h6 class="collection__info-title">
+              Аксессуары для комнат
+            </h6>
+            <p class="collection__info-text">
+              В этой категории вы найдете аксессуары для ваших комнат!
+            </p>
+          </div>
+        </a>
+        <a class="collection__item" href="#">
+          <img class="collection__images" src="{% static 'images/content/collection-2.jpg' %}" alt="">
+          <div class="collection__info">
+            <h6 class="collection__info-title">
+              Дорогая мебель
+            </h6>
+            <p class="collection__info-text">
+              В этой категории вы найдете всю дорогую мебель которая у нас есть!
+            </p>
+          </div>
+        </a>
+        <a class="collection__item" href="#">
+          <img class="collection__images" src="{% static 'images/content/collection-3.jpg' %}" alt="">
+          <div class="collection__info">
+            <h6 class="collection__info-title">
+              Кресла и торшеры
+            </h6>
+            <p class="collection__info-text">
+              В этой категории вы найдете кресла и торшеры для вашего дома!
+            </p>
+          </div>
+        </a>
+        <a class="collection__item" href="#">
+          <img class="collection__images" src="{% static 'images/content/collection-4.jpg' %}" alt="">
+          <div class="collection__info">
+            <h6 class="collection__info-title">
+              Вазы тумбы и картины
+            </h6>
+            <p class="collection__info-text">
+              В этой категории вы найдете красивые вазочки с тумбочками и картинами!
+            </p>
+          </div>
+        </a>
+        <a class="collection__item" href="#">
+          <img class="collection__images" src="{% static 'images/content/collection-5.jpg' %}" alt="">
+          <div class="collection__info">
+            <h6 class="collection__info-title">
+              Диваны и полки
+            </h6>
+            <p class="collection__info-text">
+              В этой категории вы найдете разнообразные диваны и полки для вашего дома!
+            </p>
+          </div>
+        </a>
+      </div>
+
+
+    </main>
+    {% endblock content %}
+
+  </div>
+</body>
+
+</html>

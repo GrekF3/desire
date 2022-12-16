@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+{% block head %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>Магазин мебели W.L</title>
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="icon" href="https://previews.123rf.com/images/kchung/kchung1504/kchung150400194/38526323-3d-%EC%9A%B0%EC%95%84%ED%95%9C-%ED%99%A9%EA%B8%88-%ED%8E%B8%EC%A7%80-w-%EA%B2%80%EC%9D%80-%EB%B0%B0%EA%B2%BD%EC%97%90-%EA%B3%A0%EB%A6%BD.jpg">
+</head>
+{% endblock head %}
+<body>
+  <div class="wrapper">
+    {% block header %}
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="{% url 'about' %}">О нас</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="{% url 'gallery' %}">Галерея</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="{% url 'home' %}" class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="logo">
+          </a>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="{% url 'blog' %}">Блог</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="{% url 'contacts' %}">Контакты</a>
+              </li>
+
+              {% if not request.user.is_authenticated %}
+              <div class="button_input">
+                <a id="open_pop_up_input" href="#">Войти</a>
+              </div>
+              <div class="pop_up_input" id="pop_up_input">
+                <div class="pop_up_container_input">
+                  <div class="pop_up_body_input" id="pop_up_body_input">
+                    <p>Войти в аккаунт</p>
+                    <form method="POST">
+                      {% csrf_token %}
+                      {{ login_form.username }}
+                      {{ login_form.password }}
+                      <button name="login" type="submit">Войти</button>
+                    </form>
+                    <div class="pop_up_close_input" id = "pop_up_close_input">&#10006</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="button_reg">
+                <a id="open_pop_up_reg" href="#">Регистрация</a>
+              </div>
+              <div class="pop_up_reg" id="pop_up_reg">
+                <div class="pop_up_container_reg">
+                  <div class="pop_up_body_reg" id="pop_up_body_reg">
+                    <p>Зарегистрировать аккаунт</p>
+                    <form method="POST">
+                      {% csrf_token %}
+                      {{ register_form.username }}
+                      {{ register_form.first_name }}
+                      {{ register_form.password1 }}
+                      {{ register_form.password2 }}
+                      <button name="register" type="submit">Зарегистрироваться</button>
+                    </form>
+                    <div class="pop_up_close_reg" id = "pop_up_close_reg">&#10006</div>
+                  </div>
+                </div>
+              </div>
+              {% else %}
+              <div class="button_input">
+                <a id="" href="#">Профиль</a>
+              </div>
+              {% endif %}
+
+
+            </ul>
+          </nav>
+          <button class="header__btn-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <button class="header__btn">
+            <img src="{% static 'images/icon_menu.svg' %}" alt="icon menu">
+          </button>
+          <div class="rightside-menu rightside-menu--close">
+            <button class="rightside-menu__close">
+              <img src="{% static 'images/path.svg' %}" alt="">
+            </button>
+            <div class="rightside-menu__content">
+              <a class="rightside-menu__logo" href="#">
+                <img src="{% static 'images/logo.png' %}" alt="logo">
+              </a>
+              <h4 class="rightside-menu__title">
+                Мебель для жизни
+              </h4>
+              <p class="rightside-menu__text">
+                Наша мебель поможет вам почувствовать комфорт, она сделана из самого качественного материла и проходила ряд проверок перед тем, как попасть на сайт.
+              </p>
+              <img class="rightside-menu__images" src="{% static 'images/rightsite-img.jpg' %}" alt="images">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    {% endblock header %}
+    {% block content %}
+    <main class="main">
+      <section>
+        <div class="top">
+            <div class="top__inner">
+              <div class="top__slider">
+                <div class="top__slider-item">
+                  <img class="top__slider-img" src="{% static 'images/content/slider-img.png' %}" alt="images">
+                  <div class="top__slider-info">
+                    <h2 class="top__slider-title">
+                      Мебельная
+                      коллекция
+                    </h2>
+                    <p class="top__slider-text">
+                      Тут вы найдете всё что нужно вашему дому! Наша современная мебельная коллекция придаст интерьерную красоту вашему дому, которая станет незабываемой абсолютно для всех кого вы решите пригласить к себе домой!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section class="new-collection">
+        <div class="conteiner-fluid">
+          <h3 class="new-collection__title">
+            Новая коллекция мебели
+          </h3>
+          <h4 class="collection__specifications-title">
+            Характеристики:
+          </h4>
+          <ul class="collection__specifications">
+            <li class="collection__specifications-item">Качественный материал</li>
+            <li class="collection__specifications-item">Современный вид</li>
+            <li class="collection__specifications-item">Дизайнерская работа</li>
+          </ul>
+          <p class="new-collection__text">
+            
+          </p>
+          <div class="collection">
+            <a class="collection__item" href="#">
+              <img class="collection__images" src="{% static 'images/content/collection-1.jpg' %}" alt="">
+              <div class="collection__info">
+                <h6 class="collection__info-title">
+                  Аксессуары для комнат
+                </h6>
+                <p class="collection__info-text">
+                  В этой категории вы найдете аксессуары для ваших комнат!
+                </p>
+              </div>
+            </a>
+            <a class="collection__item" href="#">
+              <img class="collection__images" src="{% static 'images/content/collection-2.jpg' %}" alt="">
+              <div class="collection__info">
+                <h6 class="collection__info-title">
+                  Дорогая мебель
+                </h6>
+                <p class="collection__info-text">
+                  В этой категории вы найдете всю дорогую мебель которая у нас есть!
+                </p>
+              </div>
+            </a>
+            <a class="collection__item" href="#">
+              <img class="collection__images" src="{% static 'images/content/collection-3.jpg' %}" alt="">
+              <div class="collection__info">
+                <h6 class="collection__info-title">
+                  Кресла и торшеры
+                </h6>
+                <p class="collection__info-text">
+                  В этой категории вы найдете кресла и торшеры для вашего дома!
+                </p>
+              </div>
+            </a>
+            <a class="collection__item" href="#">
+              <img class="collection__images" src="{% static 'images/content/collection-4.jpg' %}" alt="">
+              <div class="collection__info">
+                <h6 class="collection__info-title">
+                  Вазы тумбы и картины
+                </h6>
+                <p class="collection__info-text">
+                  В этой категории вы найдете красивые вазочки с тумбочками и картинами!
+                </p>
+              </div>
+            </a>
+            <a class="collection__item" href="#">
+              <img class="collection__images" src="{% static 'images/content/collection-5.jpg' %}" alt="">
+              <div class="collection__info">
+                <h6 class="collection__info-title">
+                  Диваны и полки
+                </h6>
+                <p class="collection__info-text">
+                  В этой категории вы найдете разнообразные диваны и полки для вашего дома!
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="decor">
+        <div class="container">
+          <h2 class="decor__title">
+            Эстетика <br>
+            этичная мебель
+          </h2>
+          <p class="decor__text">
+            С другой стороны рамки и место обучения кадров позволяет выполнять важные задания по разработке позиций, занимаемых участниками.
+          </p>
+        </div>
+      </section>
+      <section class="works-path">
+        <div class="container">
+          <h3 class="works-path__title">
+            Как это работает
+          </h3>
+          <div class="works-path__items">
+            <div class="works-path__item-box">
+              <div class="works-path__item works-path__item--consultation">
+                <img class="works-path__item-img" src="{% static 'images/graphic-tool.svg' %}" alt="icon">
+                <h6 class="works-path__item-title">Помощь дизайнера</h6>
+                <p class="works-path__item-text">
+                  Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык.
+                </p>
+              </div>
+              <div class="works-path__item works-path__item--production">
+                <img class="works-path__item-img" src="{% static 'images/sofa.svg' %}" alt="icon">
+                <h6 class="works-path__item-title">Производство</h6>
+                <p class="works-path__item-text">
+                  По своей сути рыбатекст является альтернативой традиционному
+                </p>
+              </div>
+            </div>
+            <div class="works-path__item works-path__item--measuring">
+              <img class="works-path__item-img" src="{% static 'images/measuring-tape.png' %}" alt="icon">
+              <h6 class="works-path__item-title">Измерения</h6>
+              <p class="works-path__item-text">
+                В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="gallery">
+        <div class="container-fluid">
+          <div class="gallery__buttons">
+            <button class="gallery__btn" data-filter=".bedroom">Мебель для спальни</button>
+            <button class="gallery__btn" data-filter=".living">Мебель для гостиной</button>
+            <button class="gallery__btn" data-filter=".office">Офисная мебель</button>
+            <button class="gallery__btn" data-filter=".dining">Мебель для столовой</button>
+            <button class="gallery__btn" data-filter=".chair">Стулья</button>
+          </div>
+          <div class="gallery__inner">
+
+            <div class="gallery__items mix bedroom">
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/1.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/2.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/3.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/4.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/5.jpg' %}" alt="images">
+              </a>
+            </div>
+
+            <div class="gallery__items mix living">
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/1.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/2.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/3.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/4.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/5.jpg' %}" alt="images">
+              </a>
+            </div>
+
+            <div class="gallery__items mix office">
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/1.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/2.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/3.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/4.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/5.jpg' %}" alt="images">
+              </a>
+            </div>
+
+            <div class="gallery__items mix dining">
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/1.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/2.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/3.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/4.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/5.jpg' %}" alt="images">
+              </a>
+            </div>
+
+            <div class="gallery__items mix chair">
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/1.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/2.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/3.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/4.jpg' %}" alt="images">
+              </a>
+              <a class="gallery__item" href="http://127.0.0.1:5500/desire/app/gallery.html">
+                <img src="{% static 'images/gallery/5.jpg' %}" alt="images">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <section class="blog-box">
+        <div class="container">
+          <h3 class="blog-box__title">
+            Больше идей для вдохновения в нашем блоге
+          </h3>
+          <div class="blog-box__items">
+            <div class="blog-box__item">
+              <a class="blog-box__img-link" href="http://127.0.0.1:5500/desire/app/blog.html">
+                <img class="blog-box__img" src="{% static 'images/blog/1.jpg' %}" alt="">
+              </a>
+              <div class="blog-box__links">
+                <span class="blog-box__date">Март 12, 2021</span> |
+                <a class="blog-box__author" href="#">Артем Кавальчук</a> |
+                <a class="blog-box__theme" href="#">Интерьер</a>
+              </div>
+              <a class="blog-box__item-titlelink" href="#">
+                <h4 class="blog-box__item-title">
+                  Листикул на самом деле использует активированный уголь для питья уксуса. 
+                </h4>
+              </a>
+            </div>
+            <div class="blog-box__item">
+              <a class="blog-box__img-link" href="http://127.0.0.1:5500/desire/app/blog.html">
+                <img class="blog-box__img" src="{% static 'images/blog/2.jpg' %}" alt="">
+              </a>
+              <div class="blog-box__links">
+                <span class="blog-box__date">Сентябрь 28, 2021</span> |
+                <a class="blog-box__author" href="#">Максим Максименко</a> |
+                <a class="blog-box__theme" href="#">Интерьер столовой</a>
+              </div>
+              <a class="blog-box__item-titlelink" href="#">
+                <h4 class="blog-box__item-title">
+                  Красные селфи Эдисон Лампа Четыре доллара тост скромный
+                </h4>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+    </main>
+    {% endblock content %}
+    {% block footer %}
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="container">
+          <div class="footer__inner">
+            <div class="footer__info">
+              <h6 class="footer__info-title">
+                Контакты
+              </h6> 
+              <p class="footer__info-text">
+                Если вам что-то понравилось или у вас появились вовросы, то - напишите нам, и мы дадим вам ответы!
+              </p>
+              <a class="info-email" href="mailto:jetblack22890@gmail.com">
+              jetblack22890@gmail.com
+              </a>
+              <form class="footer__form">
+                <input class="footer__form-input" type="email" placeholder="Напишите нам свою почту">
+                <button class="footer__form-button" type="submit">Отправить</button>
+              </form>
+            </div>
+            <ul class="footer__social">
+              <li class="footer__social-item">
+                <a class="footer__social-link footer__social-link--facebook" href="#">Facebook</a>
+              </li>
+              <li class="footer__social-item">
+                <a class="footer__social-link footer__social-link--instagram" href="#">Instagram</a>
+              </li>
+              <li class="footer__social-item">
+                <a class="footer__social-link footer__social-link--pinterest" href="#">Pinterest</a>
+              </li>
+              <li class="footer__social-item">
+                <a class="footer__social-link footer__social-link--whatsapp" href="#">WhatsApp</a>
+              </li>
+              <li class="footer__social-item">
+                <a class="footer__social-link footer__social-link--youtube" href="#">Youtube</a>
+              </li>
+            </ul>
+            <nav class="footer__menu">
+              <ul class="footer__menu-list">
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">Доставка</a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">Вопрос / ответ</a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">Помощь</a>
+                </li>
+                <li class="footer__menu-item">
+                  <a class="footer__menu-link" href="#">Больше о нас</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        <div class="container">
+          <p>
+            © Бренд: W.L. Все права защищены: 2022г.
+          </p>
+        </div>
+      </div>
+    </footer>
+    {% endblock footer %}
+  </div>
+  <!-- Библиотека jQuery -->
+  <script src="{% static 'js/mixitup.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+{% extends 'base-page.html' %}
+{% load static %}
+<html lang="en">
+
+<body>
+
+  <div class="wrapper">
+    
+    {% block content %}
+    <main class="main">
+      <div class="breadcrumbs">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{% url 'home' %}">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{% url 'post' %}">Блог №1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="blog blog-one">
+        <div class="container">
+          <div class="blog__inner">
+
+            <div class="blog__items">
+              <div class="blog__item blog-one__item">
+                <img class="blog__item-img" src="{% static 'images/blog/big-1.jpg' %}" alt="images">
+                <div class="blog__item-info">
+                  <span class="blog__item-date">Август 15, 2021</span> |
+                  <a class="blog__item-author" href="#">Софья Саммер</a> |
+                  <a class="blog__item-theme" href="#">Мебель для спальни</a>
+                </div>
+                <a class="blog__item-link" href="#">
+                  <h3 class="blog__item-title">
+                    Красные селфи эдисон лампочка четыре доллара тост скромный за мебель
+                  </h3>
+                </a>
+                <div class="blog__one-text">
+                  <p>
+                    Разнообразный и богатый опыт укрепление и развитие структуры способствует подготовки и реализации систем массового участия. Разнообразный и богатый опыт реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации новых предложений. Равным образом сложившаяся структура организации влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Разнообразный и богатый опыт укрепление и развитие структуры способствует подготовки и реализации систем массового участия. Разнообразный и богатый опыт реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации новых предложений. Равным образом сложившаяся структура организации влечет за собой процесс внедрения и модернизации соответствующий условий активизации. 
+                  </p>
+                  <blockquote>
+                    “Простота — это не цель. Это побочный продукт хорошей идеи и скромных ожиданий” 
+                    <div class="blog__blockquote-author">
+                      Кто-то сказал
+                    </div>
+                  </blockquote>
+                  <p>
+                    Товарищи! консультация с широким активом в значительной степени обуславливает создание новых предложений. Разнообразный и богатый опыт начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке систем массового участия.Товарищи! консультация с широким активом в значительной степени обуславливает создание новых предложений. Разнообразный и богатый опыт начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке систем массового участия.Товарищи! консультация с широким активом в значительной степени обуславливает создание новых предложений.
+                  </p>
+                </div>
+                <div class="blog-one__tags">
+                  <h4 class="blog-one__tags-title">
+                    Теги
+                  </h4>
+                  <a class="blog-one__tags-link" href="#">Мебель для спальни</a>
+                  <a class="blog-one__tags-link" href="#">Офисная мебель</a>
+                  <a class="blog-one__tags-link" href="#">Мебель для столовой</a>
+                  <a class="blog-one__tags-link" href="#">Стулья</a>
+                </div>
+                <div class="blog-one__links">
+                  <a class="blog-one__link blog-one__link-prev" href="#">
+                    <span>Кред селфи Эдисон Лампа Тост за четыре доллара скромный</span>
+                  </a>
+                  <a class="blog-one__link blog-one__link-next" href="#">
+                    <span>Семиотика фикс тост за четыре доллара, следующий уровень</span>
+                  </a>
+                </div>
+              </div>
+              <div class="blog-one__comments">
+                <h4 class="blog-one__comments-title">
+                  Комментарии:
+                </h4>
+                <div class="blog-one__comments-item">
+                  <img class="blog-one__comments-avatar" src="{% static 'images/content/avatar.jpg' %}" alt="avatar">
+                  <div class="blog-one__comments-info">
+                    <p class="blog-one__comments-name">
+                      Лера Браун
+                    </p>
+                    <p class="blog-one__comments-data">
+                      Август 12, 2021
+                    </p>
+                    <p class="blog-one__comments-text">
+                      Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке.
+                    </p>
+                  </div>
+                  <button class="blog-one__reply">Ответить</button>
+                </div>
+              </div>
+              <form class="blog-one__form">
+                <h4 class="blog-one__form-title">
+                  Написать комментарий
+                </h4>
+                <textarea class="blog-one__form-textarea" placeholder="Напишите комментарий"></textarea>
+                <input class="blog-one__form-input" type="text" placeholder="Ваше имя">
+                <input class="blog-one__form-input" type="enail" placeholder="Ваша почта">
+                <label class="blog-one__form-label">
+                  <input class="blog-one__form-labelinput" type="checkbox">
+                  Запомнить меня
+                </label>
+                <button class="blog-one__form-btn" type="submit">Отправить</button>
+              </form>
+            </div>
+
+            <aside class="aside">
+              <form class="aside__search">
+                <input class="aside__search-input" type="text" placeholder="Поиск">
+                <button class="aside__search-btn" type="submit">
+                  <img src="{% static 'images/search-icon.svg' %}" alt="search icon">
+                </button>
+              </form>
+              <div class="blog__category">
+                <h6 class="blog__category-title">
+                  Категории:
+                </h6>
+                <ul class="blog__category-list">
+                  <li class="blog__category-item">
+                    <a href="" class="blog__category-link">
+                      Столовая (1)
+                    </a>
+                  </li>
+                  <li class="blog__category-item">
+                    <a href="" class="blog__category-link">
+                      Офисная мебель (12)
+                    </a>
+                  </li>
+                  <li class="blog__category-item">
+                    <a href="" class="blog__category-link">
+                      Простой дизайн интерьера (2)
+                    </a>
+                  </li>
+                  <li class="blog__category-item">
+                    <a href="" class="blog__category-link">
+                      Дизайн (4)
+                    </a>
+                  </li>
+                  <li class="blog__category-item">
+                    <a href="" class="blog__category-link">
+                      Мебель для спальни (1)
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="recent-posts">
+                <h6 class="recent-posts__title">
+                  Недавние Посты
+                </h6>
+                <ul class="recent-posts__list">
+                  <li class="recent-posts__item">
+                    <a class="recent-posts__item-title" href="#">
+                      Кред селфи Эдисон Лампа Тост за четыре доллара скромный
+                    </a>
+                    <span class="recent-posts__date">
+                      Август 10, 2021
+                    </span> |
+                    <a class="recent-posts__author" href="#">
+                      Анна Саммер
+                    </a>
+                  </li>
+                  <li class="recent-posts__item">
+                    <a class="recent-posts__item-title" href="#">
+                      Семиотика фикс тост за четыре доллара, следующий уровень разбудил сцену, фотобудку для прямой торговли
+                    </a>
+                    <span class="recent-posts__date">
+                      Сентябрь 30, 2021
+                    </span> |
+                    <a class="recent-posts__author" href="#">
+                      Анна Саммер
+                    </a>
+                  </li>
+                  <li class="recent-posts__item">
+                    <a class="recent-posts__item-title" href="#">
+                      Кред селфи Эдисон Лампа Тост за четыре доллара скромный
+                    </a>
+                    <span class="recent-posts__date">
+                      Май 2, 2021
+                    </span> |
+                    <a class="recent-posts__author" href="#">
+                      Анна Саммер
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog__tags">
+                <h6 class="blog__tags-title">
+                  Теги
+                </h6>
+                <a class="blog__tags-link" href="#">Мебель для столовой</a>
+                <a class="blog__tags-link" href="#">Стулья</a>
+                <a class="blog__tags-link" href="#">Столы</a>
+                <a class="blog__tags-link" href="#">Спальня</a>
+                <a class="blog__tags-link" href="#">Офисная мебель</a>
+              </div>
+              <ul class="blog__social">
+                <li class="blog__social-item">
+                  <a class="blog__social-link" href="#">
+                    <img class="blog__social-link" src="{% static 'images/facebook.svg' %}" alt="facebook">
+                  </a>
+                </li>
+                <li class="blog__social-item">
+                  <a class="blog__social-link" href="#">
+                    <img class="blog__social-link" src="{% static 'images/instagram.svg' %}" alt="instagram">
+                  </a>
+                </li>
+                <li class="blog__social-item">
+                  <a class="blog__social-link" href="#">
+                    <img class="blog__social-link" src="{% static 'images/pinterest.svg' %}" alt="pinterest">
+                  </a>
+                </li>
+                <li class="blog__social-item">
+                  <a class="blog__social-link" href="#">
+                    <img class="blog__social-link" src="{% static 'images/whatsapp.svg' %}" alt="whatsapp">
+                  </a>
+                </li>
+                <li class="blog__social-item">
+                  <a class="blog__social-link" href="#">
+                    <img class="blog__social-link" src="{% static 'images/youtube.svg' %}" alt="youtube">
+                  </a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+
+
+
+    </main>
+    {% endblock content %}
+    
+  </div>
+
+</body>
+
+</html>

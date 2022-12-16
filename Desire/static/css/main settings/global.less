@@ -1,0 +1,61 @@
+// main: ../style.less
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 27px;
+	color: @default;
+	overflow-x: hidden;
+	min-width: 300px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+
+.container{
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.conteiner-fluid{
+	max-width: 1920%;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.info-email{
+	font-weight: 600;
+	font-size: 14px;
+	color: @title;
+	margin-bottom: 22px;
+	padding-left: 30px;
+	display: inline-block;
+	position: relative;
+	&::before{
+		content: '';
+		background-image: url(../images/envelope.svg);
+		position: absolute;
+		top: 8px;
+		left: 0;
+		width: 16px;
+		height: 12px;
+	}
+}
+

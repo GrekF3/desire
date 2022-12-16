@@ -1,0 +1,30 @@
+// main: ../style.less
+
+.decor {
+    padding: 170px 0 155px;
+    background-image: url(../images/decor-bg.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    &__title{
+        font-family: 'Montserrat', sans-serif;
+        max-width: 730px;
+        color: @title;
+        font-size: 60px;
+        line-height: 80px;
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 200px;
+            bottom: 0;
+            height: 1px;
+            background: #6D7278;
+        }
+    }
+    &__text{
+        max-width: 540px;
+    }
+}

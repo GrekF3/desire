@@ -1,0 +1,55 @@
+// main: ../style.less
+
+.header {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 120px;
+    }
+
+    &__btn{
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    &__btn-menu {
+        display: none;
+    }
+}
+
+.logo {
+    margin: 0 auto;
+}
+
+.menu {
+    padding-right: 15px;
+    &__list{
+        display: flex;
+    }
+    &__list-item {
+        padding-right: 45px;
+        padding-left: 35px;
+    }
+    &__list-link{
+        font-family: 'Montserrat', sans-serif;
+        color: rgba(54, 56, 56, 0.9);
+        line-height: 22px;
+    }
+    &__list-link--active{
+        padding-bottom: 4px;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            border-radius: 1px;
+            background-color: rgba(@title, .7);
+        }
+    }
+}

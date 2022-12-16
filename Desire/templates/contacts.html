@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+{% extends 'base-page.html' %}
+{% load static %}
+<html lang="en">
+
+
+<body>
+
+  <div class="wrapper">
+    {% block content %}
+    <main class="main">
+      <div class="breadcrumbs">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{% url 'home' %}">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{% url 'contacts' %}">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2204.7133687398805!2d37.5369781159007!3d55.74721538055189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54bdd017303b9%3A0xd1f63f945a2450c2!2z0JzQvtGB0LrQstCwINCh0LjRgtC4!5e1!3m2!1sru!2sru!4v1644949341401!5m2!1sru!2sru" width="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <section class="contact">
+        <div class="container">
+          <h3 class="contact__title">
+            Наши контакты
+          </h3>
+          <ul class="contact__social">
+            <li class="contact__social-item">
+              <a class="contact__social-link" href="#">
+                <img class="contact__social-link" src="{% static 'images/facebook.svg' %}" alt="facebook">
+              </a>
+            </li>
+            <li class="contact__social-item">
+              <a class="contact__social-link" href="#">
+                <img class="contact__social-link" src="{% static 'images/instagram.svg' %}" alt="instagram">
+              </a>
+            </li>
+            <li class="contact__social-item">
+              <a class="contact__social-link" href="#">
+                <img class="contact__social-link" src="{% static 'images/pinterest.svg' %}" alt="pinterest">
+              </a>
+            </li>
+            <li class="contact__social-item">
+              <a class="contact__social-link" href="#">
+                <img class="contact__social-link" src="{% static 'images/whatsapp.svg' %}" alt="whatsapp">
+              </a>
+            </li>
+            <li class="contact__social-item">
+              <a class="contact__social-link" href="#">
+                <img class="contact__social-link" src="{% static 'images/youtube.svg' %}" alt="youtube">
+              </a>
+            </li>
+          </ul>
+          <div class="contact__box">
+            <p class="contact__text">
+              Задача организации, в особенности же новая модель организационной деятельности позволяет оценить значение существенных финансовых и административных условий. Товарищи! укрепление и развитие структуры позволяет оценить значение форм развития.
+            </p>
+            <a class="contact__phone" href="tel:+79185896154">+7 (918) 589 61-54</a>
+            <div class="contact__st">Улица Заводская 154</div>
+            <div class="contact__city">Батайск, Ростовская область, Россия(RU)</div>
+            <a class="info-email" href="mailto:jetblack22890@gmail.com">
+              jetblack22890@gmail.com
+            </a>
+          </div>
+          <form class="contact__form">
+            <input class="contact__form-input" placeholder="Ваше имя" type="text">
+            <input class="contact__form-input" placeholder="Ваша почта" type="text">
+            <textarea class="contact__form-area" placeholder="Ваше сообщение"></textarea>
+            <button class="contact__form-btn" type="submit">Отправить</button>
+          </form>
+        </div>
+      </section>
+      <div class="container-fluid">
+        <div class="contact-slider">
+          <a class="contact-slider__link" href="#">
+            <img class="contact-slider__img" src="{% static 'images/slider/1.jpg' %}" alt="images">
+            <p class="contact-slider__title">
+              Пока тут живет текст-затычка :)
+            </p>
+          </a>
+          <a class="contact-slider__link" href="#">
+            <img class="contact-slider__img" src="{% static 'images/slider/2.jpg' %}" alt="images">
+            <p class="contact-slider__title">
+              Пока тут живет текст-затычка :)
+            </p>
+          </a>
+          <a class="contact-slider__link" href="#">
+            <img class="contact-slider__img" src="{% static 'images/slider/3.jpg' %}" alt="images">
+            <p class="contact-slider__title">
+              Пока тут живет текст-затычка :)
+            </p>
+          </a>
+          <a class="contact-slider__link" href="#">
+            <img class="contact-slider__img" src="{% static 'images/slider/4.jpg' %}" alt="images">
+            <p class="contact-slider__title">
+              Пока тут живет текст-затычка :)
+            </p>
+          </a>
+          <a class="contact-slider__link" href="#">
+            <img class="contact-slider__img" src="{% static 'images/slider/5.jpg' %}" alt="images">
+            <p class="contact-slider__title">
+              Пока тут живет текст-затычка :)
+            </p>
+          </a>
+          <a class="contact-slider__link" href="#">
+            <img class="contact-slider__img" src="{% static 'images/slider/6.jpg' %}" alt="images">
+            <p class="contact-slider__title">
+              Пока тут живет текст-затычка :)
+            </p>
+          </a>
+          <a class="contact-slider__link" href="#">
+            <img class="contact-slider__img" src="{% static 'images/slider/7.jpg' %}" alt="images">
+            <p class="contact-slider__title">
+              Пока тут живет текст-затычка :)
+            </p>
+          </a>
+          <a class="contact-slider__link" href="#">
+            <img class="contact-slider__img" src="{% static 'images/slider/8.jpg' %}" alt="images">
+            <p class="contact-slider__title">
+              Пока тут живет текст-затычка :)
+            </p>
+          </a>
+          <a class="contact-slider__link" href="#">
+            <img class="contact-slider__img" src="{% static 'images/slider/9.jpg' %}" alt="images">
+            <p class="contact-slider__title">
+              Пока тут живет текст-затычка :)
+            </p>
+          </a>
+          <a class="contact-slider__link" href="#">
+            <img class="contact-slider__img" src="{% static 'images/slider/10.jpg' %}" alt="images">
+            <p class="contact-slider__title">
+              Пока тут живет текст-затычка :)
+            </p>
+          </a>
+        </div>
+      </div>
+
+
+
+
+
+    </main>
+    {% endblock %}
+  </div>
+
+</body>
+
+</html>
